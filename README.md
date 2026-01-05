@@ -21,12 +21,13 @@ The project covers the full pipeline from **face detection and alignment** to **
 
 ## Model Architecture
 
-- **Backbone**: EfficientNetB3 (pretrained on ImageNet)
-- **Custom Head**:
+- **Backbone**: EfficientNetB3 (pretrained on ImageNet, include_top=False)
+- **Custom Classification Head**:
   - Global Average Pooling
-  - Dense (512, ReLU)
-  - Dropout
-  - Sigmoid Output Layer
+  - Dropout (rate = 0.4)
+  - Dense (512 units, ReLU activation)
+  - Dropout (rate = 0.3)
+  - Dense (1 unit, Sigmoid activation)
 - **Loss Function**: Binary Crossentropy
 - **Optimizer**: Adam
 - **Metrics**: Accuracy, AUC
@@ -72,6 +73,8 @@ Model performance is evaluated using:
 
 ```python
 print(classification_report(y_true, y_pred))
+```
+---
 
 ## Real-Time Demo (Webcam)
 
@@ -81,6 +84,8 @@ The trained model is deployed for real-time smile detection using a webcam:
 - Predicts smile probability
 - Displays label and confidence score live
 
+---
+
 ## Technologies Used
 
 - **Programming Language**: Python
@@ -88,6 +93,8 @@ The trained model is deployed for real-time smile detection using a webcam:
 - **Computer Vision**: OpenCV, MTCNN
 - **Data Processing**: NumPy, Pandas
 - **Visualization**: Matplotlib, Seaborn
+
+---
 
 ## Course Information
 
