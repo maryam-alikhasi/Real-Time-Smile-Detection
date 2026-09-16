@@ -16,6 +16,7 @@ The project covers the full pipeline from **face detection and alignment** to **
 - **Frameworks**: TensorFlow / Keras, OpenCV
 - **Face Detection**: MTCNN
 - **Application**: Offline evaluation + Real-time webcam inference
+- **Pretrained Model**: Trained EfficientNetB3 model available in `.keras` format
 
 ---
 
@@ -31,6 +32,24 @@ The project covers the full pipeline from **face detection and alignment** to **
 - **Loss Function**: Binary Crossentropy
 - **Optimizer**: Adam
 - **Metrics**: Accuracy, AUC
+
+---
+
+## Trained Model
+
+The final trained model is provided in **Keras `.keras` format** and can be used directly for inference without retraining.
+
+- **File format**: `.keras`
+- **Model**: EfficientNetB3 with custom classification head
+- **Input size**: `300 × 300`
+- **Output**: Sigmoid probability for the `smile` class
+
+The trained model can be loaded using:
+
+```python
+from tensorflow import keras
+
+model = keras.models.load_model("smile_detector_effnetb3.keras")
 
 ---
 
