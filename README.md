@@ -51,6 +51,8 @@ from tensorflow import keras
 
 model = keras.models.load_model("smile_detector_effnetb3.keras")
 
+```
+
 ---
 
 ## Dataset
